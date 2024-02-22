@@ -13,8 +13,8 @@ conda activate venv/
 #### In Linux
 ```
 source activate ./venv
-
-### Install requirements
+```
+#### Install requirements
 ```
 pip install -r requirements.txt
 ```
