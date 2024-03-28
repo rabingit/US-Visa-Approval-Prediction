@@ -66,7 +66,7 @@ export AWS_SECRET_ACCESS_KEY=<AWS_SECRET_ACCESS_KEY>
 - Save the URI: 136566696263.dkr.ecr.us-east-1.amazonaws.com/mlproject
                 339712768638.dkr.ecr.us-east-1.amazonaws.com/usvisa
 4. Create EC2 machine (Ubuntu)
-3.94.203.171
+3.94.203.171 e
 5. Open EC2 and Install docker in EC2 Machine:
 #optinal
 
