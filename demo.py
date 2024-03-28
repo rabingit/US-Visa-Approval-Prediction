@@ -11,7 +11,7 @@ except Exception as e:
 
 #from us_visa.constants import DATABASE_NAME
 #print(DATABASE_NAME)
-
+#test
 from us_visa.pipeline.training_pipeline import TrainPipeline
 
 pipline = TrainPipeline()
