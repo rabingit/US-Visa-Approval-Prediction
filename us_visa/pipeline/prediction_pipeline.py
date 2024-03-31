@@ -10,6 +10,8 @@ from us_visa.logger import logging
 from us_visa.utils.main_utils import read_yaml_file
 from pandas import DataFrame
 
+import pickle
+from us_visa.constants import *
 
 class USvisaData:
     def __init__(self,
@@ -104,10 +106,21 @@ class USvisaClassifier:
         """
         try:
             logging.info("Entered predict method of USvisaClassifier class")
-            model = USvisaEstimator(
+            """model = USvisaEstimator(
                 bucket_name=self.prediction_pipeline_config.model_bucket_name,
                 model_path=self.prediction_pipeline_config.model_file_path,
-            )
+            )"""
+            
+            model_path = os.path.join(ARTIFACT_DIR, MODEL_FILE_NAME)
+            # open a file, where you stored the pickled data
+            file = open(model_path, 'rb')
+
+            # dump information to that file
+            model = pickle.load(file)
+
+            # close the file
+            file.close()
+
             result =  model.predict(dataframe)
             
             return result

@@ -92,3 +92,7 @@ AWS_DEFAULT_REGION
 ECR_REPO
 
 
+8. To run fastapi in local machine, execute below command in conda environment
+uvicorn app:app
+
+
