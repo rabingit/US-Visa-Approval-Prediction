@@ -81,8 +81,11 @@ async def trainRouteClient():
 async def predictRouteClient(request: Request):
     try:
         form = DataForm(request)
+        
+    
         await form.get_usvisa_data()
         
+ 
         usvisa_data = USvisaData(
                                 continent= form.continent,
                                 education_of_employee = form.education_of_employee,
@@ -108,9 +111,11 @@ async def predictRouteClient(request: Request):
         else:
             status = "Visa Not-Approved"
 
+       
+       
         return templates.TemplateResponse(
             "usvisa.html",
-            {"request": request, "context": status},
+            {"request": request, "context": status, 'form': form},
         )
         
     except Exception as e:

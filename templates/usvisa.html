@@ -8,7 +8,27 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   </head>
   <body>
-     
+    <div class="text-center text-black">
+      <h2 class="display-4 fw-bolder">Visa Prediction Status: {{context}} </h2>
+    </div>
+
+    
+    {% if form %}
+      <div>
+      <p>Continent: {{ form.continent }}</p>
+      <p>Education: {{ form.education_of_employee }}</p>
+      <p>Has Job Experience: {{ form.has_job_experience }}</p>
+      <p>Requires Job Training: {{ form.requires_job_training }}</p>
+      <p>No Of Employees: {{ form.no_of_employees }}</p>
+      <p>Company Age: {{ form.company_age }}</p>
+      <p>Region Of Employment: {{ form.region_of_employment }}</p>
+      <p>Prevailing Wage: {{ form.prevailing_wage }}</p>
+      <p>Unit Of Wage: {{ form.unit_of_wage }}</p>
+      <p>Full Time Position: {{ form.full_time_position }}</p>
+      </div>
+    {% endif %}
+    
+
     <section>
         <div class="container-fluid">
             <div class="container">
@@ -102,7 +122,7 @@
         
                       <div class="mb-3">
                         <label for="company_age">Age of the company</label>
-                        <input type="number" class="form-control" id="company_age" name="company_age" min="15" max="180" placeholder="select between 10 to 180" required="required">
+                        <input type="number" class="form-control" id="company_age" name="company_age" min="1" max="180" placeholder="select between 1 to 180" required="required">
                       </div>
         
                         <input class="btn btn-primary" type="submit" value="Predict Visa-Status" required />
@@ -110,9 +130,7 @@
                     
                 </form>
             </div>
-            <div class="text-center text-black">
-                <h2 class="display-4 fw-bolder">Visa Prediction Status: {{context}} </h2>
-            </div>
+            
         </div>
     </section>
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
